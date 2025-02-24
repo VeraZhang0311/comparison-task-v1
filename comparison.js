@@ -72,12 +72,12 @@ var coords = [ // x1: starting x coordinate; x2: end x coordinate; y1: start y c
 ];
 
 // Hardcode order of conditions to ensure that subjects still get an equal distribution of same and different even if they only get to beginning trials
-var pattern_list_3_1 = [{ posindex: [5, 20, 15, 19], diff: 1, cr: 'k' }, { posindex: [24, 13, 17, 5], diff: 0, cr: 'd' }, { posindex: [2, 19, 16, 17], diff: 1, cr: 'k' }, { posindex: [3, 4, 15, 14], diff: 0, cr: 'd' }, { posindex: [23, 21, 16, 10], diff: 1, cr: 'k' }, { posindex: [12, 6, 8, 9], diff: 1, cr: 'k' }, { posindex: [22, 8, 2, 4], diff: 0, cr: 'd' }, { posindex: [15, 19, 1, 20], diff: 0, cr: 'd' }, { posindex: [12, 2, 4, 19], diff: 1, cr: 'k' }, { posindex: [24, 18, 1, 6], diff: 0, cr: 'd' }, { posindex: [18, 16, 17, 13], diff: 1, cr: 'k' }, { posindex: [20, 15, 5, 10], diff: 0, cr: 'd' }, { posindex: [6, 8, 1, 4], diff: 0, cr: 'd' }, { posindex: [12, 14, 19, 2], diff: 1, cr: 'k' }, { posindex: [9, 10, 7, 8], diff: 1, cr: 'k' }, { posindex: [11, 6, 9, 18], diff: 0, cr: 'd' }, { posindex: [18, 3, 1, 16], diff: 1, cr: 'k' }, { posindex: [6, 24, 15, 9], diff: 0, cr: 'd' }, { posindex: [16, 5, 18, 17], diff: 0, cr: 'd' }, { posindex: [20, 5, 19, 18], diff: 0, cr: 'd' }, { posindex: [7, 9, 12, 6], diff: 1, cr: 'k' }, { posindex: [22, 23, 20, 6], diff: 1, cr: 'k' }, { posindex: [23, 22, 12, 7], diff: 0, cr: 'd' }, { posindex: [3, 7, 1, 24], diff: 1, cr: 'k' }, { posindex: [3, 22, 5, 2], diff: 0, cr: 'd' }, { posindex: [17, 20, 12, 19], diff: 0, cr: 'd' }, { posindex: [13, 15, 2, 12], diff: 0, cr: 'd' }, { posindex: [23, 2, 7, 20], diff: 0, cr: 'd' }, { posindex: [6, 23, 21, 14], diff: 1, cr: 'k' }, { posindex: [12, 11, 6, 9], diff: 1, cr: 'k' }, { posindex: [13, 18, 11, 4], diff: 1, cr: 'k' }, { posindex: [18, 23, 12, 22], diff: 1, cr: 'k' }];
-var pattern_list_3_2 = [{ posindex: [22, 9, 10, 2], diff: 1, cr: 'k' }, { posindex: [21, 7, 18, 3], diff: 1, cr: 'k' }, { posindex: [1, 12, 5, 16], diff: 1, cr: 'k' }, { posindex: [11, 16, 8, 24], diff: 0, cr: 'd' }, { posindex: [18, 1, 3, 22], diff: 1, cr: 'k' }, { posindex: [5, 19, 6, 24], diff: 0, cr: 'd' }, { posindex: [17, 8, 18, 5], diff: 0, cr: 'd' }, { posindex: [19, 22, 11, 10], diff: 1, cr: 'k' }, { posindex: [24, 16, 15, 20], diff: 1, cr: 'k' }, { posindex: [1, 4, 12, 7], diff: 1, cr: 'k' }, { posindex: [19, 5, 16, 18], diff: 0, cr: 'd' }, { posindex: [21, 8, 3, 13], diff: 0, cr: 'd' }, { posindex: [4, 2, 23, 5], diff: 1, cr: 'k' }, { posindex: [11, 17, 3, 5], diff: 0, cr: 'd' }, { posindex: [7, 14, 6, 19], diff: 0, cr: 'd' }, { posindex: [20, 7, 16, 11], diff: 0, cr: 'd' }, { posindex: [1, 24, 2, 13], diff: 1, cr: 'k' }, { posindex: [3, 4, 14, 18], diff: 1, cr: 'k' }, { posindex: [9, 16, 21, 22], diff: 0, cr: 'd' }, { posindex: [12, 17, 4, 5], diff: 0, cr: 'd' }, { posindex: [2, 5, 7, 10], diff: 1, cr: 'k' }, { posindex: [4, 22, 19, 20], diff: 1, cr: 'k' }, { posindex: [7, 21, 13, 23], diff: 1, cr: 'k' }, { posindex: [3, 17, 22, 1], diff: 0, cr: 'd' }, { posindex: [12, 11, 20, 5], diff: 1, cr: 'k' }, { posindex: [16, 5, 14, 19], diff: 1, cr: 'k' }, { posindex: [21, 8, 17, 6], diff: 0, cr: 'd' }, { posindex: [23, 17, 10, 22], diff: 1, cr: 'k' }, { posindex: [12, 9, 22, 19], diff: 0, cr: 'd' }, { posindex: [1, 10, 21, 5], diff: 0, cr: 'd' }, { posindex: [19, 3, 20, 11], diff: 0, cr: 'd' }, { posindex: [10, 12, 3, 15], diff: 0, cr: 'd' }];
-var pattern_list_6_1 = [{ posindex: [24, 20, 9, 11, 23, 3, 4], diff: 0, cr: 'd' }, { posindex: [20, 23, 11, 4, 14, 18, 5], diff: 0, cr: 'd' }, { posindex: [12, 14, 13, 21, 3, 20, 9], diff: 0, cr: 'd' }, { posindex: [12, 10, 11, 3, 19, 24, 1], diff: 0, cr: 'd' }, { posindex: [22, 24, 2, 8, 18, 11, 12], diff: 1, cr: 'k' }, { posindex: [10, 1, 24, 12, 11, 17, 5], diff: 1, cr: 'k' }, { posindex: [12, 18, 1, 9, 13, 10, 22], diff: 1, cr: 'k' }, { posindex: [2, 20, 12, 19, 22, 4, 1], diff: 0, cr: 'd' }, { posindex: [6, 10, 9, 16, 17, 8, 4], diff: 0, cr: 'd' }, { posindex: [4, 11, 13, 20, 21, 24, 3], diff: 1, cr: 'k' }, { posindex: [13, 10, 12, 19, 17, 22, 1], diff: 0, cr: 'd' }, { posindex: [15, 7, 17, 5, 11, 20, 14], diff: 1, cr: 'k' }, { posindex: [22, 17, 18, 4, 13, 9, 12], diff: 1, cr: 'k' }, { posindex: [8, 12, 19, 11, 10, 21, 7], diff: 1, cr: 'k' }, { posindex: [10, 24, 5, 11, 20, 15, 21], diff: 0, cr: 'd' }, { posindex: [4, 6, 10, 2, 13, 8, 16], diff: 1, cr: 'k' }, { posindex: [4, 22, 12, 9, 14, 10, 11], diff: 0, cr: 'd' }, { posindex: [15, 17, 8, 24, 19, 4, 3], diff: 0, cr: 'd' }, { posindex: [7, 1, 12, 18, 10, 24, 21], diff: 0, cr: 'd' }, { posindex: [3, 23, 6, 1, 17, 4, 13], diff: 0, cr: 'd' }, { posindex: [1, 17, 6, 15, 22, 5, 21], diff: 1, cr: 'k' }, { posindex: [3, 12, 19, 9, 7, 8, 14], diff: 0, cr: 'd' }, { posindex: [9, 2, 1, 14, 4, 8, 21], diff: 0, cr: 'd' }, { posindex: [16, 19, 8, 24, 3, 22, 21], diff: 1, cr: 'k' }, { posindex: [3, 7, 18, 2, 10, 12, 13], diff: 1, cr: 'k' }, { posindex: [10, 3, 4, 20, 18, 6, 13], diff: 1, cr: 'k' }, { posindex: [15, 24, 8, 4, 23, 16, 10], diff: 0, cr: 'd' }, { posindex: [11, 8, 13, 2, 10, 24, 21], diff: 1, cr: 'k' }, { posindex: [17, 4, 13, 1, 7, 10, 3], diff: 1, cr: 'k' }, { posindex: [18, 13, 21, 11, 24, 5, 1], diff: 1, cr: 'k' }, { posindex: [6, 18, 20, 8, 17, 16, 15], diff: 0, cr: 'd' }, { posindex: [5, 9, 11, 6, 24, 10, 17], diff: 1, cr: 'k' }];
-var pattern_list_6_2 = [{ posindex: [22, 5, 9, 21, 10, 16, 2], diff: 1, cr: 'k' }, { posindex: [7, 18, 9, 11, 5, 19, 12], diff: 0, cr: 'd' }, { posindex: [24, 3, 14, 5, 11, 12, 15], diff: 1, cr: 'k' }, { posindex: [14, 9, 17, 20, 5, 16, 23], diff: 0, cr: 'd' }, { posindex: [9, 8, 5, 21, 11, 22, 6], diff: 1, cr: 'k' }, { posindex: [7, 13, 24, 21, 22, 8, 18], diff: 1, cr: 'k' }, { posindex: [12, 17, 9, 8, 19, 10, 6], diff: 1, cr: 'k' }, { posindex: [20, 15, 16, 14, 17, 5, 3], diff: 0, cr: 'd' }, { posindex: [9, 11, 13, 8, 19, 23, 17], diff: 0, cr: 'd' }, { posindex: [5, 13, 10, 16, 23, 19, 8], diff: 0, cr: 'd' }, { posindex: [2, 12, 8, 5, 20, 13, 21], diff: 1, cr: 'k' }, { posindex: [4, 12, 18, 7, 16, 17, 11], diff: 1, cr: 'k' }, { posindex: [6, 21, 23, 17, 18, 2, 5], diff: 0, cr: 'd' }, { posindex: [10, 14, 15, 22, 1, 24, 13], diff: 1, cr: 'k' }, { posindex: [9, 1, 6, 16, 4, 10, 3], diff: 0, cr: 'd' }, { posindex: [15, 23, 2, 17, 22, 16, 7], diff: 0, cr: 'd' }, { posindex: [3, 8, 17, 14, 2, 4, 22], diff: 1, cr: 'k' }, { posindex: [13, 18, 21, 1, 19, 4, 3], diff: 1, cr: 'k' }, { posindex: [23, 1, 12, 17, 24, 7, 3], diff: 1, cr: 'k' }, { posindex: [8, 24, 9, 15, 12, 3, 5], diff: 0, cr: 'd' }, { posindex: [2, 9, 11, 8, 7, 22, 21], diff: 1, cr: 'k' }, { posindex: [10, 24, 17, 18, 2, 11, 23], diff: 0, cr: 'd' }, { posindex: [2, 18, 24, 6, 10, 3, 12], diff: 1, cr: 'k' }, { posindex: [12, 7, 8, 10, 1, 11, 21], diff: 0, cr: 'd' }, { posindex: [8, 13, 15, 21, 12, 16, 17], diff: 1, cr: 'k' }, { posindex: [17, 24, 13, 2, 7, 21, 14], diff: 0, cr: 'd' }, { posindex: [16, 3, 17, 24, 11, 7, 18], diff: 0, cr: 'd' }, { posindex: [16, 10, 3, 24, 14, 13, 9], diff: 0, cr: 'd' }, { posindex: [14, 16, 13, 11, 15, 1, 18], diff: 0, cr: 'd' }, { posindex: [19, 17, 24, 12, 4, 20, 2], diff: 0, cr: 'd' }, { posindex: [13, 15, 14, 6, 20, 8, 18], diff: 1, cr: 'k' }, { posindex: [12, 7, 4, 11, 1, 21, 13], diff: 1, cr: 'k' }];
-var pattern_list_9_1 = [{ posindex: [22, 15, 13, 18, 24, 16, 1, 3, 14, 4], diff: 1, cr: 'k' }, { posindex: [15, 9, 23, 5, 10, 13, 14, 7, 18, 12], diff: 0, cr: 'd' }, { posindex: [1, 15, 4, 2, 12, 5, 18, 23, 7, 21], diff: 0, cr: 'd' }, { posindex: [12, 21, 9, 13, 8, 20, 10, 14, 15, 1], diff: 0, cr: 'd' }, { posindex: [21, 20, 22, 9, 8, 2, 3, 10, 19, 23], diff: 1, cr: 'k' }, { posindex: [20, 23, 24, 4, 12, 11, 9, 2, 22, 7], diff: 1, cr: 'k' }, { posindex: [10, 13, 3, 21, 8, 18, 9, 5, 24, 22], diff: 0, cr: 'd' }, { posindex: [18, 17, 16, 11, 5, 3, 4, 12, 8, 23], diff: 0, cr: 'd' }, { posindex: [20, 22, 15, 7, 19, 9, 12, 24, 3, 14], diff: 1, cr: 'k' }, { posindex: [17, 18, 19, 2, 7, 14, 20, 13, 3, 24], diff: 1, cr: 'k' }, { posindex: [17, 10, 19, 22, 15, 8, 4, 5, 3, 1], diff: 1, cr: 'k' }, { posindex: [24, 22, 18, 9, 15, 3, 6, 10, 17, 2], diff: 0, cr: 'd' }, { posindex: [4, 24, 17, 16, 1, 10, 8, 7, 6, 5], diff: 1, cr: 'k' }, { posindex: [11, 5, 7, 16, 20, 2, 1, 9, 24, 23], diff: 0, cr: 'd' }, { posindex: [12, 3, 2, 5, 24, 18, 9, 1, 4, 21], diff: 1, cr: 'k' }, { posindex: [21, 18, 20, 19, 22, 10, 4, 15, 7, 6], diff: 0, cr: 'd' }, { posindex: [19, 21, 16, 12, 4, 3, 15, 20, 11, 7], diff: 1, cr: 'k' }, { posindex: [11, 12, 14, 9, 20, 4, 3, 7, 10, 6], diff: 1, cr: 'k' }, { posindex: [17, 18, 6, 23, 11, 22, 15, 20, 12, 24], diff: 0, cr: 'd' }, { posindex: [10, 14, 12, 21, 6, 24, 4, 19, 1, 16], diff: 1, cr: 'k' }, { posindex: [16, 13, 7, 24, 14, 10, 20, 17, 4, 1], diff: 0, cr: 'd' }, { posindex: [18, 20, 15, 22, 6, 16, 10, 1, 19, 24], diff: 0, cr: 'd' }, { posindex: [1, 22, 17, 7, 5, 20, 2, 11, 4, 21], diff: 0, cr: 'd' }, { posindex: [2, 19, 16, 11, 18, 6, 15, 23, 4, 14], diff: 1, cr: 'k' }, { posindex: [23, 12, 24, 19, 14, 1, 13, 10, 11, 15], diff: 1, cr: 'k' }, { posindex: [12, 18, 4, 16, 8, 24, 9, 11, 20, 13], diff: 0, cr: 'd' }, { posindex: [19, 2, 9, 7, 22, 21, 13, 12, 16, 3], diff: 0, cr: 'd' }, { posindex: [23, 10, 7, 1, 20, 13, 19, 15, 2, 22], diff: 1, cr: 'k' }, { posindex: [20, 24, 2, 3, 13, 19, 5, 11, 1, 6], diff: 0, cr: 'd' }, { posindex: [8, 12, 16, 23, 14, 11, 10, 13, 5, 6], diff: 1, cr: 'k' }, { posindex: [12, 3, 23, 15, 19, 5, 24, 6, 16, 9], diff: 0, cr: 'd' }, { posindex: [23, 1, 19, 3, 10, 7, 21, 24, 18, 2], diff: 1, cr: 'k' }];
-var pattern_list_9_2 = [{ posindex: [3, 16, 20, 15, 19, 4, 8, 17, 7, 12], diff: 0, cr: 'd' }, { posindex: [10, 6, 16, 13, 23, 14, 2, 15, 12, 3], diff: 1, cr: 'k' }, { posindex: [11, 4, 1, 19, 2, 14, 3, 21, 20, 9], diff: 0, cr: 'd' }, { posindex: [18, 14, 9, 13, 20, 2, 7, 19, 16, 17], diff: 0, cr: 'd' }, { posindex: [4, 22, 23, 24, 13, 7, 6, 19, 2, 12], diff: 1, cr: 'k' }, { posindex: [20, 14, 21, 5, 22, 11, 13, 8, 3, 19], diff: 1, cr: 'k' }, { posindex: [14, 23, 15, 5, 6, 4, 10, 7, 1, 24], diff: 0, cr: 'd' }, { posindex: [20, 8, 23, 11, 2, 3, 9, 16, 24, 21], diff: 0, cr: 'd' }, { posindex: [13, 21, 6, 4, 16, 10, 22, 1, 9, 5], diff: 1, cr: 'k' }, { posindex: [13, 6, 10, 23, 15, 8, 14, 16, 1, 7], diff: 1, cr: 'k' }, { posindex: [3, 21, 24, 10, 20, 8, 16, 18, 7, 2], diff: 1, cr: 'k' }, { posindex: [12, 3, 21, 20, 11, 9, 2, 4, 5, 17], diff: 1, cr: 'k' }, { posindex: [23, 1, 13, 11, 14, 24, 6, 22, 19, 12], diff: 1, cr: 'k' }, { posindex: [18, 16, 9, 8, 22, 5, 6, 4, 1, 13], diff: 0, cr: 'd' }, { posindex: [24, 7, 14, 22, 9, 18, 3, 1, 21, 10], diff: 0, cr: 'd' }, { posindex: [22, 24, 8, 1, 19, 9, 3, 7, 15, 10], diff: 0, cr: 'd' }, { posindex: [11, 24, 16, 23, 5, 10, 3, 21, 7, 13], diff: 1, cr: 'k' }, { posindex: [22, 12, 21, 13, 23, 14, 2, 11, 15, 24], diff: 1, cr: 'k' }, { posindex: [10, 18, 9, 2, 5, 21, 24, 1, 15, 3], diff: 0, cr: 'd' }, { posindex: [2, 18, 21, 19, 3, 23, 17, 15, 14, 12], diff: 1, cr: 'k' }, { posindex: [13, 6, 18, 15, 11, 5, 16, 2, 21, 9], diff: 0, cr: 'd' }, { posindex: [23, 20, 17, 15, 10, 8, 7, 2, 16, 1], diff: 0, cr: 'd' }, { posindex: [22, 6, 19, 2, 4, 9, 16, 18, 23, 8], diff: 1, cr: 'k' }, { posindex: [8, 14, 2, 17, 9, 12, 10, 22, 11, 5], diff: 0, cr: 'd' }, { posindex: [1, 24, 23, 16, 19, 7, 3, 20, 12, 14], diff: 0, cr: 'd' }, { posindex: [4, 7, 14, 20, 9, 24, 16, 19, 3, 21], diff: 0, cr: 'd' }, { posindex: [19, 14, 4, 15, 8, 13, 7, 9, 1, 17], diff: 1, cr: 'k' }, { posindex: [22, 15, 2, 8, 6, 3, 17, 4, 13, 19], diff: 0, cr: 'd' }, { posindex: [9, 14, 16, 11, 15, 2, 5, 7, 21, 22], diff: 0, cr: 'd' }, { posindex: [2, 11, 23, 17, 5, 16, 8, 22, 10, 6], diff: 1, cr: 'k' }, { posindex: [24, 4, 12, 11, 23, 22, 13, 8, 1, 6], diff: 1, cr: 'k' }, { posindex: [4, 18, 14, 20, 17, 11, 8, 16, 24, 22], diff: 1, cr: 'k' }];
+var pattern_list_3_1 = [{ posindex: [5, 20, 15, 19], diff: 1, cr: 'j'}, { posindex: [24, 13, 17, 5], diff: 0, cr: 'f'}, { posindex: [2, 19, 16, 17], diff: 1, cr: 'j'}, { posindex: [3, 4, 15, 14], diff: 0, cr: 'f'}, { posindex: [23, 21, 16, 10], diff: 1, cr: 'j'}, { posindex: [12, 6, 8, 9], diff: 1, cr: 'j'}, { posindex: [22, 8, 2, 4], diff: 0, cr: 'f'}, { posindex: [15, 19, 1, 20], diff: 0, cr: 'f'}, { posindex: [12, 2, 4, 19], diff: 1, cr: 'j'}, { posindex: [24, 18, 1, 6], diff: 0, cr: 'f'}, { posindex: [18, 16, 17, 13], diff: 1, cr: 'j'}, { posindex: [20, 15, 5, 10], diff: 0, cr: 'f'}, { posindex: [6, 8, 1, 4], diff: 0, cr: 'f'}, { posindex: [12, 14, 19, 2], diff: 1, cr: 'j'}, { posindex: [9, 10, 7, 8], diff: 1, cr: 'j'}, { posindex: [11, 6, 9, 18], diff: 0, cr: 'f'}, { posindex: [18, 3, 1, 16], diff: 1, cr: 'j'}, { posindex: [6, 24, 15, 9], diff: 0, cr: 'f'}, { posindex: [16, 5, 18, 17], diff: 0, cr: 'f'}, { posindex: [20, 5, 19, 18], diff: 0, cr: 'f'}, { posindex: [7, 9, 12, 6], diff: 1, cr: 'j'}, { posindex: [22, 23, 20, 6], diff: 1, cr: 'j'}, { posindex: [23, 22, 12, 7], diff: 0, cr: 'f'}, { posindex: [3, 7, 1, 24], diff: 1, cr: 'j'}, { posindex: [3, 22, 5, 2], diff: 0, cr: 'f'}, { posindex: [17, 20, 12, 19], diff: 0, cr: 'f'}, { posindex: [13, 15, 2, 12], diff: 0, cr: 'f'}, { posindex: [23, 2, 7, 20], diff: 0, cr: 'f'}, { posindex: [6, 23, 21, 14], diff: 1, cr: 'j'}, { posindex: [12, 11, 6, 9], diff: 1, cr: 'j'}, { posindex: [13, 18, 11, 4], diff: 1, cr: 'j'}, { posindex: [18, 23, 12, 22], diff: 1, cr: 'j'}]; 
+var pattern_list_3_2 = [{ posindex: [22, 9, 10, 2], diff: 1, cr: 'j'}, { posindex: [21, 7, 18, 3], diff: 1, cr: 'j'}, { posindex: [1, 12, 5, 16], diff: 1, cr: 'j'}, { posindex: [11, 16, 8, 24], diff: 0, cr: 'f'}, { posindex: [18, 1, 3, 22], diff: 1, cr: 'j'}, { posindex: [5, 19, 6, 24], diff: 0, cr: 'f'}, { posindex: [17, 8, 18, 5], diff: 0, cr: 'f'}, { posindex: [19, 22, 11, 10], diff: 1, cr: 'j'}, { posindex: [24, 16, 15, 20], diff: 1, cr: 'j'}, { posindex: [1, 4, 12, 7], diff: 1, cr: 'j'}, { posindex: [19, 5, 16, 18], diff: 0, cr: 'f'}, { posindex: [21, 8, 3, 13], diff: 0, cr: 'f'}, { posindex: [4, 2, 23, 5], diff: 1, cr: 'j'}, { posindex: [11, 17, 3, 5], diff: 0, cr: 'f'}, { posindex: [7, 14, 6, 19], diff: 0, cr: 'f'}, { posindex: [20, 7, 16, 11], diff: 0, cr: 'f'}, { posindex: [1, 24, 2, 13], diff: 1, cr: 'j'}, { posindex: [3, 4, 14, 18], diff: 1, cr: 'j'}, { posindex: [9, 16, 21, 22], diff: 0, cr: 'f'}, { posindex: [12, 17, 4, 5], diff: 0, cr: 'f'}, { posindex: [2, 5, 7, 10], diff: 1, cr: 'j'}, { posindex: [4, 22, 19, 20], diff: 1, cr: 'j'}, { posindex: [7, 21, 13, 23], diff: 1, cr: 'j'}, { posindex: [3, 17, 22, 1], diff: 0, cr: 'f'}, { posindex: [12, 11, 20, 5], diff: 1, cr: 'j'}, { posindex: [16, 5, 14, 19], diff: 1, cr: 'j'}, { posindex: [21, 8, 17, 6], diff: 0, cr: 'f'}, { posindex: [23, 17, 10, 22], diff: 1, cr: 'j'}, { posindex: [12, 9, 22, 19], diff: 0, cr: 'f'}, { posindex: [1, 10, 21, 5], diff: 0, cr: 'f'}, { posindex: [19, 3, 20, 11], diff: 0, cr: 'f'}, { posindex: [10, 12, 3, 15], diff: 0, cr: 'f'}]; 
+var pattern_list_6_1 = [{ posindex: [24, 20, 9, 11, 23, 3, 4], diff: 0, cr: 'f'}, { posindex: [20, 23, 11, 4, 14, 18, 5], diff: 0, cr: 'f'}, { posindex: [12, 14, 13, 21, 3, 20, 9], diff: 0, cr: 'f'}, { posindex: [12, 10, 11, 3, 19, 24, 1], diff: 0, cr: 'f'}, { posindex: [22, 24, 2, 8, 18, 11, 12], diff: 1, cr: 'j'}, { posindex: [10, 1, 24, 12, 11, 17, 5], diff: 1, cr: 'j'}, { posindex: [12, 18, 1, 9, 13, 10, 22], diff: 1, cr: 'j'}, { posindex: [2, 20, 12, 19, 22, 4, 1], diff: 0, cr: 'f'}, { posindex: [6, 10, 9, 16, 17, 8, 4], diff: 0, cr: 'f'}, { posindex: [4, 11, 13, 20, 21, 24, 3], diff: 1, cr: 'j'}, { posindex: [13, 10, 12, 19, 17, 22, 1], diff: 0, cr: 'f'}, { posindex: [15, 7, 17, 5, 11, 20, 14], diff: 1, cr: 'j'}, { posindex: [22, 17, 18, 4, 13, 9, 12], diff: 1, cr: 'j'}, { posindex: [8, 12, 19, 11, 10, 21, 7], diff: 1, cr: 'j'}, { posindex: [10, 24, 5, 11, 20, 15, 21], diff: 0, cr: 'f'}, { posindex: [4, 6, 10, 2, 13, 8, 16], diff: 1, cr: 'j'}, { posindex: [4, 22, 12, 9, 14, 10, 11], diff: 0, cr: 'f'}, { posindex: [15, 17, 8, 24, 19, 4, 3], diff: 0, cr: 'f'}, { posindex: [7, 1, 12, 18, 10, 24, 21], diff: 0, cr: 'f'}, { posindex: [3, 23, 6, 1, 17, 4, 13], diff: 0, cr: 'f'}, { posindex: [1, 17, 6, 15, 22, 5, 21], diff: 1, cr: 'j'}, { posindex: [3, 12, 19, 9, 7, 8, 14], diff: 0, cr: 'f'}, { posindex: [9, 2, 1, 14, 4, 8, 21], diff: 0, cr: 'f'}, { posindex: [16, 19, 8, 24, 3, 22, 21], diff: 1, cr: 'j'}, { posindex: [3, 7, 18, 2, 10, 12, 13], diff: 1, cr: 'j'}, { posindex: [10, 3, 4, 20, 18, 6, 13], diff: 1, cr: 'j'}, { posindex: [15, 24, 8, 4, 23, 16, 10], diff: 0, cr: 'f'}, { posindex: [11, 8, 13, 2, 10, 24, 21], diff: 1, cr: 'j'}, { posindex: [17, 4, 13, 1, 7, 10, 3], diff: 1, cr: 'j'}, { posindex: [18, 13, 21, 11, 24, 5, 1], diff: 1, cr: 'j'}, { posindex: [6, 18, 20, 8, 17, 16, 15], diff: 0, cr: 'f'}, { posindex: [5, 9, 11, 6, 24, 10, 17], diff: 1, cr: 'j'}]; 
+var pattern_list_6_2 = [{ posindex: [22, 5, 9, 21, 10, 16, 2], diff: 1, cr: 'j'}, { posindex: [7, 18, 9, 11, 5, 19, 12], diff: 0, cr: 'f'}, { posindex: [24, 3, 14, 5, 11, 12, 15], diff: 1, cr: 'j'}, { posindex: [14, 9, 17, 20, 5, 16, 23], diff: 0, cr: 'f'}, { posindex: [9, 8, 5, 21, 11, 22, 6], diff: 1, cr: 'j'}, { posindex: [7, 13, 24, 21, 22, 8, 18], diff: 1, cr: 'j'}, { posindex: [12, 17, 9, 8, 19, 10, 6], diff: 1, cr: 'j'}, { posindex: [20, 15, 16, 14, 17, 5, 3], diff: 0, cr: 'f'}, { posindex: [9, 11, 13, 8, 19, 23, 17], diff: 0, cr: 'f'}, { posindex: [5, 13, 10, 16, 23, 19, 8], diff: 0, cr: 'f'}, { posindex: [2, 12, 8, 5, 20, 13, 21], diff: 1, cr: 'j'}, { posindex: [4, 12, 18, 7, 16, 17, 11], diff: 1, cr: 'j'}, { posindex: [6, 21, 23, 17, 18, 2, 5], diff: 0, cr: 'f'}, { posindex: [10, 14, 15, 22, 1, 24, 13], diff: 1, cr: 'j'}, { posindex: [9, 1, 6, 16, 4, 10, 3], diff: 0, cr: 'f'}, { posindex: [15, 23, 2, 17, 22, 16, 7], diff: 0, cr: 'f'}, { posindex: [3, 8, 17, 14, 2, 4, 22], diff: 1, cr: 'j'}, { posindex: [13, 18, 21, 1, 19, 4, 3], diff: 1, cr: 'j'}, { posindex: [23, 1, 12, 17, 24, 7, 3], diff: 1, cr: 'j'}, { posindex: [8, 24, 9, 15, 12, 3, 5], diff: 0, cr: 'f'}, { posindex: [2, 9, 11, 8, 7, 22, 21], diff: 1, cr: 'j'}, { posindex: [10, 24, 17, 18, 2, 11, 23], diff: 0, cr: 'f'}, { posindex: [2, 18, 24, 6, 10, 3, 12], diff: 1, cr: 'j'}, { posindex: [12, 7, 8, 10, 1, 11, 21], diff: 0, cr: 'f'}, { posindex: [8, 13, 15, 21, 12, 16, 17], diff: 1, cr: 'j'}, { posindex: [17, 24, 13, 2, 7, 21, 14], diff: 0, cr: 'f'}, { posindex: [16, 3, 17, 24, 11, 7, 18], diff: 0, cr: 'f'}, { posindex: [16, 10, 3, 24, 14, 13, 9], diff: 0, cr: 'f'}, { posindex: [14, 16, 13, 11, 15, 1, 18], diff: 0, cr: 'f'}, { posindex: [19, 17, 24, 12, 4, 20, 2], diff: 0, cr: 'f'}, { posindex: [13, 15, 14, 6, 20, 8, 18], diff: 1, cr: 'j'}, { posindex: [12, 7, 4, 11, 1, 21, 13], diff: 1, cr: 'j'}];
+var pattern_list_9_1 = [{ posindex: [22, 15, 13, 18, 24, 16, 1, 3, 14, 4], diff: 1, cr: 'j'}, { posindex: [15, 9, 23, 5, 10, 13, 14, 7, 18, 12], diff: 0, cr: 'f'}, { posindex: [1, 15, 4, 2, 12, 5, 18, 23, 7, 21], diff: 0, cr: 'f'}, { posindex: [12, 21, 9, 13, 8, 20, 10, 14, 15, 1], diff: 0, cr: 'f'}, { posindex: [21, 20, 22, 9, 8, 2, 3, 10, 19, 23], diff: 1, cr: 'j'}, { posindex: [20, 23, 24, 4, 12, 11, 9, 2, 22, 7], diff: 1, cr: 'j'}, { posindex: [10, 13, 3, 21, 8, 18, 9, 5, 24, 22], diff: 0, cr: 'f'}, { posindex: [18, 17, 16, 11, 5, 3, 4, 12, 8, 23], diff: 0, cr: 'f'}, { posindex: [20, 22, 15, 7, 19, 9, 12, 24, 3, 14], diff: 1, cr: 'j'}, { posindex: [17, 18, 19, 2, 7, 14, 20, 13, 3, 24], diff: 1, cr: 'j'}, { posindex: [17, 10, 19, 22, 15, 8, 4, 5, 3, 1], diff: 1, cr: 'j'}, { posindex: [24, 22, 18, 9, 15, 3, 6, 10, 17, 2], diff: 0, cr: 'f'}, { posindex: [4, 24, 17, 16, 1, 10, 8, 7, 6, 5], diff: 1, cr: 'j'}, { posindex: [11, 5, 7, 16, 20, 2, 1, 9, 24, 23], diff: 0, cr: 'f'}, { posindex: [12, 3, 2, 5, 24, 18, 9, 1, 4, 21], diff: 1, cr: 'j'}, { posindex: [21, 18, 20, 19, 22, 10, 4, 15, 7, 6], diff: 0, cr: 'f'}, { posindex: [19, 21, 16, 12, 4, 3, 15, 20, 11, 7], diff: 1, cr: 'j'}, { posindex: [11, 12, 14, 9, 20, 4, 3, 7, 10, 6], diff: 1, cr: 'j'}, { posindex: [17, 18, 6, 23, 11, 22, 15, 20, 12, 24], diff: 0, cr: 'f'}, { posindex: [10, 14, 12, 21, 6, 24, 4, 19, 1, 16], diff: 1, cr: 'j'}, { posindex: [16, 13, 7, 24, 14, 10, 20, 17, 4, 1], diff: 0, cr: 'f'}, { posindex: [18, 20, 15, 22, 6, 16, 10, 1, 19, 24], diff: 0, cr: 'f'}, { posindex: [1, 22, 17, 7, 5, 20, 2, 11, 4, 21], diff: 0, cr: 'f'}, { posindex: [2, 19, 16, 11, 18, 6, 15, 23, 4, 14], diff: 1, cr: 'j'}, { posindex: [23, 12, 24, 19, 14, 1, 13, 10, 11, 15], diff: 1, cr: 'j'}, { posindex: [12, 18, 4, 16, 8, 24, 9, 11, 20, 13], diff: 0, cr: 'f'}, { posindex: [19, 2, 9, 7, 22, 21, 13, 12, 16, 3], diff: 0, cr: 'f'}, { posindex: [23, 10, 7, 1, 20, 13, 19, 15, 2, 22], diff: 1, cr: 'j'}, { posindex: [20, 24, 2, 3, 13, 19, 5, 11, 1, 6], diff: 0, cr: 'f'}, { posindex: [8, 12, 16, 23, 14, 11, 10, 13, 5, 6], diff: 1, cr: 'j'}, { posindex: [12, 3, 23, 15, 19, 5, 24, 6, 16, 9], diff: 0, cr: 'f'}, { posindex: [23, 1, 19, 3, 10, 7, 21, 24, 18, 2], diff: 1, cr: 'j'}]; 
+var pattern_list_9_2 = [{ posindex: [3, 16, 20, 15, 19, 4, 8, 17, 7, 12], diff: 0, cr: 'f'}, { posindex: [10, 6, 16, 13, 23, 14, 2, 15, 12, 3], diff: 1, cr: 'j'}, { posindex: [11, 4, 1, 19, 2, 14, 3, 21, 20, 9], diff: 0, cr: 'f'}, { posindex: [18, 14, 9, 13, 20, 2, 7, 19, 16, 17], diff: 0, cr: 'f'}, { posindex: [4, 22, 23, 24, 13, 7, 6, 19, 2, 12], diff: 1, cr: 'j'}, { posindex: [20, 14, 21, 5, 22, 11, 13, 8, 3, 19], diff: 1, cr: 'j'}, { posindex: [14, 23, 15, 5, 6, 4, 10, 7, 1, 24], diff: 0, cr: 'f'}, { posindex: [20, 8, 23, 11, 2, 3, 9, 16, 24, 21], diff: 0, cr: 'f'}, { posindex: [13, 21, 6, 4, 16, 10, 22, 1, 9, 5], diff: 1, cr: 'j'}, { posindex: [13, 6, 10, 23, 15, 8, 14, 16, 1, 7], diff: 1, cr: 'j'}, { posindex: [3, 21, 24, 10, 20, 8, 16, 18, 7, 2], diff: 1, cr: 'j'}, { posindex: [12, 3, 21, 20, 11, 9, 2, 4, 5, 17], diff: 1, cr: 'j'}, { posindex: [23, 1, 13, 11, 14, 24, 6, 22, 19, 12], diff: 1, cr: 'j'}, { posindex: [18, 16, 9, 8, 22, 5, 6, 4, 1, 13], diff: 0, cr: 'f'}, { posindex: [24, 7, 14, 22, 9, 18, 3, 1, 21, 10], diff: 0, cr: 'f'}, { posindex: [22, 24, 8, 1, 19, 9, 3, 7, 15, 10], diff: 0, cr: 'f'}, { posindex: [11, 24, 16, 23, 5, 10, 3, 21, 7, 13], diff: 1, cr: 'j'}, { posindex: [22, 12, 21, 13, 23, 14, 2, 11, 15, 24], diff: 1, cr: 'j'}, { posindex: [10, 18, 9, 2, 5, 21, 24, 1, 15, 3], diff: 0, cr: 'f'}, { posindex: [2, 18, 21, 19, 3, 23, 17, 15, 14, 12], diff: 1, cr: 'j'}, { posindex: [13, 6, 18, 15, 11, 5, 16, 2, 21, 9], diff: 0, cr: 'f'}, { posindex: [23, 20, 17, 15, 10, 8, 7, 2, 16, 1], diff: 0, cr: 'f'}, { posindex: [22, 6, 19, 2, 4, 9, 16, 18, 23, 8], diff: 1, cr: 'j'}, { posindex: [8, 14, 2, 17, 9, 12, 10, 22, 11, 5], diff: 0, cr: 'f'}, { posindex: [1, 24, 23, 16, 19, 7, 3, 20, 12, 14], diff: 0, cr: 'f'}, { posindex: [4, 7, 14, 20, 9, 24, 16, 19, 3, 21], diff: 0, cr: 'f'}, { posindex: [19, 14, 4, 15, 8, 13, 7, 9, 1, 17], diff: 1, cr: 'j'}, { posindex: [22, 15, 2, 8, 6, 3, 17, 4, 13, 19], diff: 0, cr: 'f'}, { posindex: [9, 14, 16, 11, 15, 2, 5, 7, 21, 22], diff: 0, cr: 'f'}, { posindex: [2, 11, 23, 17, 5, 16, 8, 22, 10, 6], diff: 1, cr: 'j'}, { posindex: [24, 4, 12, 11, 23, 22, 13, 8, 1, 6], diff: 1, cr: 'j'}, { posindex: [4, 18, 14, 20, 17, 11, 8, 16, 24, 22], diff: 1, cr: 'j'}];
 
 /////////////////// Functions /////////////////////////////////
 // Function to create stimulus on the screen
@@ -234,7 +234,7 @@ var digit_instructions_1 = {
         <div id="intro-section" class="fade-in">
             <p><b>🚨 Incoming Transmission 🚨</b></p>
             <p>Welcome, Operative. The system is under siege.</p>
-            <p>Your task: Analyze encrypted data streams and detect anomalies.</p>
+            <p>Your mission: Inspect encrypted data streams and detect anomalies.</p>
         </div>
     `,
     choices: "NO_KEYS", 
@@ -253,20 +253,22 @@ var digit_instructions_1 = {
 
 // Identification Protocol
 var digit_instructions_2 = {
-    type: jsPsychHtmlButtonResponse,
+    type: jsPsychHtmlKeyboardResponse,
     stimulus: `
         <div id="protocol-section"  class="fade-in">
-            <p>Each sequence contains two sets of numbers.</p>
+            <p>Each sequence contains two sets of <b>numbers</b>.</p>
             <p>If the sequences are an exact match, the code is <span style="color:green">AUTHENTIC</span>.</p>
             <p>If they differ, the code has been <span style="color:red">TAMPERED</span> with.</p><br>
         
-            <p>🔹 Press <span style="color:green"><b>D</b></span> to confirm authenticity.</p>
-            <p>🔹 Press <span style="color:red"><b>K</b></span> to reject compromised data.</p> <br>
+            <p>🔹 Press <span style="color:green"><b>F</b></span> to confirm authenticity.</p>
+            <p>🔹 Press <span style="color:red"><b>J</b></span> to reject compromised data.</p> <br>
         
-            <p>Stay sharp. Stay fast. The firewall won’t hold forever.</p><br>
+            <p>Stay sharp. Stay fast. The firewall won't hold forever.</p><br><br>
+
+            <p style="color: gray; font-size: 14px;">Press SPACE BAR to continue</p>
         </div>
     `,
-    choices: ['<button class="custom-button">CONTINUE</button>'],
+    choices: [' '], // Space bar to continue
     post_trial_gap: 500,
     on_load: function() { // Ensure animation is applied after rendering
         setTimeout(() => {
@@ -283,33 +285,48 @@ var digit_instructions_2 = {
 var digit_practice_same = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: createStimulus(591, 591),
-    choices: ['d'],
-    prompt: `<br><br><p>These ARE exactly the same, so press <span style="color:green"><b>D</b></span> for YES.</p>`
-}
+    choices: ['f'],
+    prompt: `<br><br><p>These ARE exactly the same, so press <span style="color:green"><b>F</b></span> for YES.</p>`,
+    on_finish: function(data) {
+        if (data.response === 'f') {
+            playSound('correct'); // Play correct sound if answer is correct
+        } else {
+            playSound('wrong'); // Play wrong sound if incorrect
+        }
+    }
+};
 
 var digit_practice_diff = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: createStimulus(624, 614),
-    choices: ['k'],
-    prompt: `<br><br><p>These are NOT the same, so press <span style="color:red"><b>K</b></span> for NO.</p>`
+    choices: ['j'],
+    prompt: `<br><br><p>These are NOT the same, so press <span style="color:red"><b>J</b></span> for NO.</p>`,
+    on_finish: function(data) {
+        if (data.response === 'j') {
+            playSound('correct'); // Play correct sound if answer is correct
+        } else {
+            playSound('wrong'); // Play wrong sound if incorrect
+        }
+    }
 };
+
 
 // instructions before experimental trials
 var digit_instructions_3 = {
-    type: jsPsychHtmlButtonResponse,
+    type: jsPsychHtmlKeyboardResponse,
     stimulus: `
     <div id="protocol-section"  class="fade-in">
-        <p>If the numbers are an exact match, hit <span style="color:green"><b>D</b></span>.<br>
-        If the numbers don’t match, hit <span style="color:red"><b>K</b></span>.</p>
+        <p>If the numbers are an exact match, hit <span style="color:green"><b>F</b></span>.<br>
+        If the numbers don't match, hit <span style="color:red"><b>J</b></span>.</p>
 
         <p>Keep your fingers ready. The clock is ticking.<br>
-        No second chances. No room for hesitation.</p>
+        No second chances. No room for hesitation.</p><br><br>
 
-        <p><b>Press CONTINUE to begin the operation.</b></p>
+        <p style="color: gray; font-size: 14px;">Press SPACE BAR to continue</p>
         <br><br>
     </div>
     `,
-    choices: ['<button class="custom-button">CONTINUE</button>'],
+    choices: [' '], 
     on_load: function() { // Ensure animation is applied after rendering
         setTimeout(() => {
             const transitionElement = document.getElementById("protocol-section");
@@ -323,16 +340,17 @@ var digit_instructions_3 = {
 };
 
 var digit_block_instructions = {
-    type: jsPsychHtmlButtonResponse,
+    type: jsPsychHtmlKeyboardResponse,
     stimulus: function() { 
         return `
-        <div id="transition"  class="fade-in">
-            <p>Decrypting next set of codes...</p><br>
+        <div id="transition" class="fade-in">
+            <p>Decrypting next set of digit codes...</p><br>
             <p>There will be ${jsPsych.timelineVariable('setsize')} digits in each set.</p><br><br>
         </div>
         `;
     },
-    choices: ['<button class="custom-button">CONTINUE</button>'],
+    choices: "NO_KEYS",  // No user input required
+    trial_duration: 3000,  // Auto-advance after 3 seconds
     on_load: function() { // Ensure animation is applied after rendering
         setTimeout(() => {
             const transitionElement = document.getElementById("transition");
@@ -353,12 +371,12 @@ var digit_block_instructions = {
 var digit_trial = {
 	type: jsPsychHtmlKeyboardResponse,
 	stimulus: function() {return createStimulus(jsPsych.timelineVariable('num1'), jsPsych.timelineVariable('num2'))},
-	choices: ['d', 'k'],
+	choices: ['f', 'j'],
     on_start: function(data) {
         // Sample one more than the set size. Extra is used when patterns are different
         var diff = jsPsych.timelineVariable('diff')
         condition = diff == 1 ? "diff" : "same";
-        correct_response = diff == 1 ? "k" : "d";
+        correct_response = diff == 1 ? "j" : "f";
         
         block_trial_count++
         if (block_trial_count == 1) {
@@ -417,9 +435,9 @@ var digit_conclusion = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
         <div id="conclusion-screen" class="fade-in">
-            <p><b>MISSION ACCOMPLISHED ✅</b></p>
-            <p>Operative, your decryption skills are unmatched.</p>
-            <p>The system is secure for now!</p>
+            <p><b>SECTOR 1: DIGIT ANALYSIS COMPLETE ✅</b></p>
+            <p>Operative, you've successfully decrypted the numeric sequences.</p>
+            <p>The mission continues. Prepare for the next phase.</p>
         </div>
     `,
     post_trial_gap: 2000,
@@ -442,88 +460,148 @@ var digit_conclusion = {
 };
 
 /////////////////// Sub-task 2: Letter Comparison /////////////////////////////////
-var letter_instructions = {
-    type: jsPsychHtmlButtonResponse,
+var letter_instructions_1 = {
+    type: jsPsychHtmlKeyboardResponse,
     stimulus: `
-      <p>In this task, you will see 2 sets of letters on each screen.<br>
-      Your job is to judge whether the two sets are the <b>same</b>.</p>
-      <p>Press the <b>D</b> key if, yes, the sets <b>ARE</b> exactly the same.<br>
-      Press the <b>K</b> key if, no, the sets are <b>NOT</b> exactly the same.</p>
-      <p>We'll show you some examples to get you started.</p>
-      <p>Click <b>CONTINUE</b> to begin the practice session.</p>
-      <br>
-      <br>
+        <div id="intro-section" class="fade-in">
+            <p>🚨 The system has also detected anomalies in <b>text-based</b> encryption. 🚨</p>
+            <p>Your mission: Analyze intercepted letter sequences and identify compromised data.</p>
+        </div>
     `,
-  choices: ['CONTINUE'],
-  post_trial_gap: 500
+    choices: "NO_KEYS", 
+    trial_duration: 3500,
+    on_load: function() { // Ensure animation is applied after rendering
+        setTimeout(() => {
+            const transitionElement = document.getElementById("intro-section");
+            if (transitionElement) {
+                transitionElement.style.opacity = "1"; // Smooth fade-in
+            } else {
+                console.warn("Element #intro-section not found!");
+            }
+        }, 10);
+    }
 };
 
 var letter_practice_same = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: createStimulus("BHQ", "BHQ"),
-    choices: ['d'],
-    prompt: `<br><br><p>These ARE exactly the same, so press D for YES.</p>`
+    choices: ['f'],
+    prompt: `<br><br><p>These ARE exactly the same, so press <span style="color:green"><b>F</b></span> for YES.</p>`,
+    on_finish: function(data) {
+        if (data.response === 'f') {
+            playSound('correct'); 
+        } else {
+            playSound('wrong');
+        }
+    }
 }
 
 var letter_practice_diff = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: createStimulus("CVN", "CRN"),
-    choices: ['k'],
-    prompt: `<br><br><p>These are NOT the same, so press K for NO.</p>`
+    choices: ['j'],
+    prompt: `<br><br><p>These are NOT the same, so press <span style="color:red"><b>J</b></span> for NO.</p>`,
+    on_finish: function(data) {
+        if (data.response === 'j') {
+            playSound('correct');
+        } else {
+            playSound('wrong');
+        }
+    }
 };
 
 // instructions before experimental trials
 var letter_instructions_2 = {
-    type: jsPsychHtmlButtonResponse,
+    type: jsPsychHtmlKeyboardResponse,
     stimulus: `
-    <p>Please keep your fingers on the D and K keys so you can respond quickly.<br>
-    In each group of trials, there will be a different number of letters per set.<br>
-    We know that you might make some mistakes--everyone does! But, please try to go as fast as you can while still being accurate.</p>
-    <p><b>REMINDER:</b><br>
-    Press the <b>D</b> key if, <b>yes</b>, the letters <b>ARE</b> exactly the same.<br>
-    Press the <b>K</b> key if, <b>no</b>, the letters are <b>NOT</b> exactly the same.</p>
-    <p>If you have any questions please ask the experimenter now.</p></p>
-    <p> Click <b>CONTINUE</b> to begin.</p>
-    <br>
-    <br>
-        `,
-  choices: ['CONTINUE']
+        <div id="protocol-section" class="fade-in">
+            <p>Each data stream contains two encrypted letter sequences.</p>
+            <p>If the sequences are an exact match, the code is <span style="color:green">AUTHENTIC</span>.</p>
+            <p>If they differ, the code has been <span style="color:red">TAMPERED</span> with.</p><br>
+
+            <p>🔹 Press <span style="color:green"><b>F</b></span> to confirm authenticity.</p>
+            <p>🔹 Press <span style="color:red"><b>J</b></span> to reject compromised data.</p> <br>
+
+            <p>Stay sharp. Stay fast. The firewall won't hold forever.</p><br>
+        </div>
+    `,
+    choices: "NO_KEYS",
+    trial_duration: 6000, // Auto-continue after 6 seconds
+    on_load: function() { 
+        setTimeout(() => {
+            const transitionElement = document.getElementById("protocol-section");
+            if (transitionElement) {
+                transitionElement.style.opacity = "1"; 
+            } else {
+                console.warn("Element #protocol-section not found!");
+            }
+        }, 10);
+
+        // Add event listener for space bar to end the block early
+        document.addEventListener("keydown", function handleKeydown(event) {
+            if (event.code === "Space") {
+                jsPsych.finishTrial(); // End the trial when space bar is pressed
+            }
+        });
+
+        // Store reference to function so it can be removed later
+        letter_instructions_2._keydownHandler = handleKeydown;
+    },
+    on_finish: function() {
+        // Remove event listener after trial ends to prevent unintended behavior
+        document.removeEventListener("keydown", letter_instructions_2._keydownHandler);
+    }
 };
 
+
 var letter_block_instructions = {
-    type: jsPsychHtmlButtonResponse,
-    stimulus: function() { return "<p>In this group of trials, there will be " + jsPsych.timelineVariable('setsize') + " letters in each set.</p><br><br>"},
-    choices: ["CONTINUE"],
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: function() { 
+        return `
+        <div id="transition" class="fade-in">
+            <p>Decrypting next set of letter codes...</p><br>
+            <p>There will be ${jsPsych.timelineVariable('setsize')} letters in each set.</p><br><br>
+        </div>
+        `;
+    },
+    choices: "NO_KEYS", // No button press required
+    trial_duration: 3000, // Auto-continue after 3 seconds
+    on_load: function() { 
+        setTimeout(() => {
+            const transitionElement = document.getElementById("transition");
+            if (transitionElement) {
+                transitionElement.style.opacity = "1"; 
+            } else {
+                console.warn("Element #transition not found!");
+            }
+        }, 10);
+    },
     on_start: function() {
         clearTimeout(end_timer);
-        timeout = 0;
-
-        // console.log(timeout); // Here to debug
+        timeout = 0;  
+        playSound('level-up'); // Play sound on block transition
     }
-}
+};
 
 var letter_trial = {
-	type: jsPsychHtmlKeyboardResponse,
-	stimulus: function() {return createStimulus(jsPsych.timelineVariable('str1'), jsPsych.timelineVariable('str2'))},
-	choices: ['d', 'k'],
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: function() {
+        return createStimulus(jsPsych.timelineVariable('str1'), jsPsych.timelineVariable('str2'));
+    },
+    choices: ['f', 'j'],
     on_start: function(data) {
-        correct_response = jsPsych.timelineVariable('cond') == "diff" ? "k" : "d";
+        correct_response = jsPsych.timelineVariable('cond') == "diff" ? "j" : "f";
         
-        block_trial_count++
+        block_trial_count++;
         if (block_trial_count == 1) {
             end_timer = setTimeout(function() {
-
                 block_trial_count = 0;
                 timeout = 1;
 
-                // console.log("Block timed out at this trial", block_trial_count, timeout); // Here to debug
-                        
-                // this function is all you need to end the current timeline
-                jsPsych.endCurrentTimeline();
+                jsPsych.endCurrentTimeline(); // Ends current timeline if time runs out
                 
             }, block_time_limit);
         }
-        // console.log(condition, correct_response, block_trial_count)
     },
     on_finish: function(data) {
         data.block_trial_index = block_trial_count;
@@ -535,17 +613,23 @@ var letter_trial = {
         data.correct_response = correct_response;
         data.timeout = timeout; // Indicate whether the block timed out on that trial
 
-        if (block_trial_count == n_trials) {
-            // reset block trial count after person gets through all the trials
-            block_trial_count = 0;
-            clearTimeout(end_timer);
-
-            // console.log(block_trial_count); // Here to debug
+        // Play sound effect based on correctness
+        if (!data.timeout) {  // Ensure sound is not played when timing out
+            if (data.response === correct_response) {
+                playSound('correct'); // Play correct sound
+            } else {
+                playSound('wrong');   // Play wrong sound
+            }
         }
 
-        // console.log(data); // Here to debug
+        if (block_trial_count == n_trials) {
+            // Reset block trial count after all trials are completed
+            block_trial_count = 0;
+            clearTimeout(end_timer);
+        }
     }
-}
+};
+
 
 var letter_block_3_1 = createBlock(3, letter_list_3_1, "letter");
 var letter_block_3_2 = createBlock(3, letter_list_3_2, "letter");
@@ -559,9 +643,9 @@ var letter_conclusion = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
         <div id="conclusion-screen" class="fade-in">
-            <p><b>LETTER MISSION ACCOMPLISHED ✅</b></p>
-            <p>Operative, your decryption skills are unmatched.</p>
-            <p>The system is secure for now!</p>
+            <p><b>SECTOR 2: LETTER ANALYSIS COMPLETE ✅</b></p>
+            <p>Well done, Operative. The letter sequences have been processed.</p>
+            <p>Prepare for the next challenge.</p>
         </div>
     `,
     post_trial_gap: 2000,
@@ -575,7 +659,7 @@ var letter_conclusion = {
         }, 10);
     },
     on_start: function() {
-        playSound('success'); // Play success sound on conclusion screen
+        playSound('success');
         if (online == 0) {
             var filename = "data_letter-comparison_" + subject + ".csv";
             jsPsych.data.get().localSave('csv', filename);
@@ -584,31 +668,44 @@ var letter_conclusion = {
 };
 
 /////////////////// Sub-task 3: Pattern Comparison /////////////////////////////////
-var pattern_instructions = {
-    type: jsPsychHtmlButtonResponse,
+var pattern_instructions_1 = {
+    type: jsPsychHtmlKeyboardResponse,
     stimulus: `
-      <p>In this task, you will see 2 patterns on each screen. One will be <font color="blue">blue</font> and one will be <font color="ffff00">yellow</font>.<br>
-      Your job is to judge whether the two patterns are the <b>same</b>.</p>
-      <p>Press the <b>D</b> key if, yes, the patterns <b>ARE</b> exactly the same.<br>
-      Press the <b>K</b> key if, no, the patterns are <b>NOT</b> exactly the same.</p>
-      <p>We'll show you some examples to get you started.</p>
-      <p>Click <b>CONTINUE</b> to begin the practice session.</p>
-      <br>
-      <br>
+        <div id="intro-section" class="fade-in">
+            <p>🚨 The system has also detected anomalies in <b>pattern-based</b> encryption. 🚨</p>
+            <p>Your mission: Analyze encoded pattern sequences and identify potential breaches.</p>
+        </div>
     `,
-  choices: ['CONTINUE'],
-  post_trial_gap: 500
+    choices: "NO_KEYS", 
+    trial_duration: 3500,
+    on_load: function() { // Ensure animation is applied after rendering
+        setTimeout(() => {
+            const transitionElement = document.getElementById("intro-section");
+            if (transitionElement) {
+                transitionElement.style.opacity = "1"; // Smooth fade-in
+            } else {
+                console.warn("Element #intro-section not found!");
+            }
+        }, 10);
+    }
 };
 
 var pattern_practice_same = {
     type: jsPsychCanvasKeyboardResponse,
     stimulus: drawPatterns,
     canvas_size: [screen_height, screen_width],
-    choices: ['d'],
-    prompt: `<p>These ARE exactly the same, so press D for YES.</p>`,
+    choices: ['f'],
+    prompt: `<p>These ARE exactly the same, so press <span style="color:green"><b>F</b></span> for YES.</p>`,
     on_start: function() {
         startposindex = [8, 12, 17, 1],
         condition = "same"
+    },
+    on_finish: function(data) {
+        if (data.response === 'f') {
+            playSound('correct'); 
+        } else {
+            playSound('wrong'); 
+        }
     }
 }
 
@@ -616,92 +713,137 @@ var pattern_practice_diff = {
     type: jsPsychCanvasKeyboardResponse,
     stimulus: drawPatterns,
     canvas_size: [screen_height, screen_width],
-    choices: ['k'],
-    prompt: `<p>These are NOT the same, so press K for NO.</p>`,
+    choices: ['j'],
+    prompt: `<p>These are NOT the same, so press <span style="color:red"><b>J</b></span> for NO.</p>`,
     on_start: function() {
         startposindex = [18, 10, 17, 11],
         condition = "diff"
+    },
+    on_finish: function(data) {
+        if (data.response === 'j') {
+            playSound('correct'); 
+        } else {
+            playSound('wrong'); 
+        }
     }
 };
 
 // instructions before experimental trials
 var pattern_instructions_2 = {
-    type: jsPsychHtmlButtonResponse,
+    type: jsPsychHtmlKeyboardResponse,
     stimulus: `
-    <p>Please keep your fingers on the D and K keys so you can respond quickly.<br>
-    In each group of trials, the patterns will be more or less complex.<br>
-    We know that you might make some mistakes--everyone does! But, please try to go as fast as you can while still being accurate.</p>
-    <p><b>REMINDER:</b><br>
-    Press the <b>D</b> key if, <b>yes</b>, the patterns <b>ARE</b> exactly the same.<br>
-    Press the <b>K</b> key if, <b>no</b>, the patterns are <b>NOT</b> exactly the same.</p>
-    <p>If you have any questions please ask the experimenter now.</p></p>
-    <p> Click <b>CONTINUE</b> to begin.</p>
-    <br>
-    <br>
-        `,
-  choices: ['CONTINUE']
+        <div id="protocol-section" class="fade-in">
+            <p>Each data stream contains two encrypted pattern sequences.</p>
+            <p>If the sequences are an exact match, the code is <span style="color:green">AUTHENTIC</span>.</p>
+            <p>If they differ, the code has been <span style="color:red">TAMPERED</span> with.</p><br>
+
+            <p>🔹 Press <span style="color:green"><b>F</b></span> to confirm authenticity.</p>
+            <p>🔹 Press <span style="color:red"><b>J</b></span> to reject compromised data.</p> <br>
+
+            <p>Stay sharp. Stay fast. The firewall won't hold forever.</p><br>
+        </div>
+    `,
+    choices: "NO_KEYS",
+    trial_duration: 4000, // Auto-continue after 4 seconds
+    on_load: function() { 
+        setTimeout(() => {
+            const transitionElement = document.getElementById("protocol-section");
+            if (transitionElement) {
+                transitionElement.style.opacity = "1"; 
+            } else {
+                console.warn("Element #protocol-section not found!");
+            }
+        }, 10);
+
+        // Add event listener for space bar to end the block early
+        document.addEventListener("keydown", function(event) {
+            if (event.code === "Space") {
+                jsPsych.finishTrial(); // End the trial when space bar is pressed
+            }
+        });
+    },
+    on_finish: function() {
+        // Remove event listener after trial ends to prevent unintended behavior
+        document.removeEventListener("keydown", function(event) {
+            if (event.code === "Space") {
+                jsPsych.finishTrial();
+            }
+        });
+    }
 };
 
+
 var pattern_block_instructions = {
-    type: jsPsychHtmlButtonResponse,
-    stimulus: function() { return "<p>In this group of trials, there will be " + jsPsych.timelineVariable('setsize') + " lines in each pattern.</p><br><br>"},
-    choices: ["CONTINUE"],
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: function() { 
+        return `
+        <div id="transition" class="fade-in">
+            <p>Decrypting next set of pattern codes...</p><br>
+            <p>There will be ${jsPsych.timelineVariable('setsize')} lines in each pattern.</p><br><br>
+        </div>
+        `;
+    },
+    choices: "NO_KEYS", // No button press required
+    trial_duration: 3000, // Auto-continue after 3 seconds
+    on_load: function() { 
+        setTimeout(() => {
+            const transitionElement = document.getElementById("transition");
+            if (transitionElement) {
+                transitionElement.style.opacity = "1"; 
+            } else {
+                console.warn("Element #transition not found!");
+            }
+        }, 10);
+    },
     on_start: function() {
         clearTimeout(end_timer);
-        timeout = 0;
-
-        // console.log(timeout); // Here to debug
+        timeout = 0;  
+        playSound('level-up'); // Play sound on block transition
     }
-}
+};
 
 var pattern_trial = {
-	type: jsPsychCanvasKeyboardResponse,
-	stimulus: drawPatterns,
-	canvas_size: [screen_height, screen_width],
-	choices: ['d', 'k'],
-    on_start: function(data) {
+    type: jsPsychCanvasKeyboardResponse,
+    stimulus: drawPatterns,
+    canvas_size: [screen_height, screen_width],
+    choices: ['f', 'j'],
+    on_start: function() {
         // Sample one more than the set size. Extra is used when patterns are different
-        startposindex = jsPsych.timelineVariable('posindex')
-        var diff = jsPsych.timelineVariable('diff')
+        startposindex = jsPsych.timelineVariable('posindex');
+        var diff = jsPsych.timelineVariable('diff');
         condition = diff == 1 ? "diff" : "same";
         correct_response = jsPsych.timelineVariable('cr');
 
-        block_trial_count++
+        block_trial_count++;
         if (block_trial_count == 1) {
             end_timer = setTimeout(function() {
-
                 block_trial_count = 0;
                 timeout = 1;
-
-                // console.log("Block timed out at this trial", block_trial_count, timeout); // Here to debug
-                        
-                // this function is all you need to end the current timeline
                 jsPsych.endCurrentTimeline();
-                
             }, block_time_limit);
         }
-        // console.log(condition, correct_response, block_trial_count)
     },
     on_finish: function(data) {
         data.block_trial_index = block_trial_count;
-        data.accuracy = data.response == correct_response ? 1 : 0;
+        data.accuracy = (data.response === correct_response) ? 1 : 0;
         data.pattern = jsPsych.timelineVariable('posindex');
         data.setsize = jsPsych.timelineVariable('setsize');
         data.condition = condition;
         data.correct_response = correct_response;
-        data.timeout = timeout; // Indicate whether the block timed out on that trial
+        data.timeout = timeout; 
 
-        if (block_trial_count == n_trials) {
-            // reset block trial count after person gets through all the trials
-            block_trial_count = 0;
-            clearTimeout(end_timer);
-
-            // console.log(block_trial_count); // Here to debug
+        if (String(data.response).trim().toLowerCase() === String(correct_response).trim().toLowerCase()) {
+            playSound('correct');
+        } else {
+            playSound('wrong');
         }
 
-        // console.log(data); // Here to debug
+        if (block_trial_count == n_trials) {
+            block_trial_count = 0;
+            clearTimeout(end_timer);
+        }
     }
-}
+};
 
 var pattern_block_3_1 = createBlock(3, pattern_list_3_1, "pattern");
 var pattern_block_3_2 = createBlock(3, pattern_list_3_2, "pattern");
@@ -713,11 +855,25 @@ var pattern_block_9_2 = createBlock(9, pattern_list_9_2, "pattern");
 // conclusion page
 var pattern_conclusion = {
     type: jsPsychHtmlKeyboardResponse,
-    stimulus: `<p> You are now finished with this task! </p><br>
-               <p><b> Press any key to exit.</b></p>
-               <div style='width: 700px;'></div>`,
+    stimulus: `
+        <div id="conclusion-screen"  class="fade-in">
+            <p><b>ALL MISSION ACCOMPLISHED ✅</b></p>
+            <p>Operative, your decryption skills are unmatched.</p>
+            <p>The system is secure for now!</p><br><br>
+            <p style="color: gray; font-size: 14px;"><b>Press ANY KEY to exit</b></p>
+        </div>
+    `,
     post_trial_gap: 2000,
+    on_load: function() {
+        setTimeout(() => {
+            const transitionElement = document.getElementById("conclusion-screen");
+            if (transitionElement) {
+                transitionElement.style.opacity = "1"; 
+            }
+        }, 10);
+    },
 	on_start: function() {
+        playSound('success'); // Play success sound on conclusion screen
 		if (online == 0) {
 			var filename = "data_pattern-comparison_" + subject + ".csv";
 			jsPsych.data.get().localSave('csv', filename);
@@ -726,34 +882,37 @@ var pattern_conclusion = {
     on_finish: function() {
         jsPsych.endExperiment()
     }
-    };
+};
 
 
 ////////////////////// PART 3: PUT TIMELINE TOGETHER ///////////////////////////////
 
 var digit_timeline = [
     digit_instructions_1, digit_instructions_2, digit_practice_same, digit_practice_diff, digit_instructions_3,
-    digit_block_3_1, digit_block_6_1, digit_block_9_1, digit_block_3_2, digit_block_6_2, digit_block_9_2,
+    digit_block_3_1, digit_block_6_1, 
+    // digit_block_9_1, digit_block_3_2, digit_block_6_2, digit_block_9_2,
     digit_conclusion
 ];
 
 var letter_timeline = [
-    letter_instructions, letter_practice_same, letter_practice_diff, letter_instructions_2,
-    letter_block_3_1, letter_block_6_1, letter_block_9_1, letter_block_3_2, letter_block_6_2, letter_block_9_2,
+    letter_instructions_1, letter_practice_same, letter_practice_diff, letter_instructions_2,
+    letter_block_3_1, letter_block_6_1, 
+    // letter_block_9_1, letter_block_3_2, letter_block_6_2, letter_block_9_2,
     letter_conclusion
 ];
 
 var pattern_timeline = [
-    pattern_instructions, pattern_practice_same, pattern_practice_diff, pattern_instructions_2,
-    pattern_block_3_1, pattern_block_6_1, pattern_block_9_1, pattern_block_3_2, pattern_block_6_2, pattern_block_9_2,
+    pattern_instructions_1, pattern_practice_same, pattern_practice_diff, pattern_instructions_2,
+    pattern_block_3_1, pattern_block_6_1, 
+    // pattern_block_9_1, pattern_block_3_2, pattern_block_6_2, pattern_block_9_2,
     pattern_conclusion
 ];
 
 var timeline = [
     get_subject_id, // get_location,
     welcome, enter_fullscreen,
-    ...digit_timeline,
-    ...letter_timeline,
+    // ...digit_timeline,
+    // ...letter_timeline,
     ...pattern_timeline,
     exit_fullscreen
 ];
