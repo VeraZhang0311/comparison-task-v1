@@ -23,6 +23,9 @@ var end_timer;
 var timeout = 0; // Numeric container indicating whether block timed out at this trial
 var subject; // String container of subject ID to be used appended to saved files at the end
 var online = 0; // Numeric container indicating whether task is being administered online
+var total_correct = 0;
+var total_trials = 0;
+var experimentStarted = false;
 
 /////////////////// Sub-task 1: Digit Comparison /////////////////////////////////
 // Hardcode order of conditions to ensure that subjects still get an equal distribution of same and different even if they only get to beginning trials
@@ -393,6 +396,11 @@ var digit_trial = {
             }, block_time_limit);
         }
         // console.log(condition, correct_response, block_trial_count)
+        if (!experimentStarted) {
+            experimentStarted = true;  // Mark when the real trials start
+            total_correct = 0;  // Reset accuracy tracking
+            total_trials = 0;
+        }
     },
     on_finish: function(data) {
         data.block_trial_index = block_trial_count;
@@ -404,12 +412,18 @@ var digit_trial = {
         data.correct_response = correct_response;
         data.timeout = timeout; // Indicate whether the block timed out on that trial
 
+        total_trials ++;
+
         // Play correct or wrong sound
         if (data.accuracy === 1) {
             playSound('correct');
+            total_correct ++;
         } else {
             playSound('wrong');
         }
+
+        updateScoreBar();
+        console.log(`🔍 Total Trials: ${total_trials}, Correct Responses: ${total_correct}`);
 
         if (block_trial_count == n_trials) {
             // reset block trial count after person gets through all the trials

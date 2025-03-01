@@ -1,28 +1,36 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Check if the score bar is still in the DOM, if not, re-add it
-    setTimeout(() => {
+ 
+    // Function to create and append the score bar if it's not in the DOM
+    function createScoreBar() {
         if (!document.getElementById("score-bar-container")) {
             let scoreBarContainer = document.createElement("div");
             scoreBarContainer.id = "score-bar-container";
-            scoreBarContainer.style.position = "fixed";
-            scoreBarContainer.style.top = "10px";
-            scoreBarContainer.style.left = "10px";
-            scoreBarContainer.style.width = "200px";
-            scoreBarContainer.style.height = "20px";
-            scoreBarContainer.style.backgroundColor = "gray";
-            scoreBarContainer.style.borderRadius = "5px";
-            scoreBarContainer.style.overflow = "hidden";
-            scoreBarContainer.style.zIndex = "9999";
 
             let scoreBar = document.createElement("div");
             scoreBar.id = "score-bar";
-            scoreBar.style.width = "0%";
-            scoreBar.style.height = "100%";
-            scoreBar.style.backgroundColor = "green";
-            scoreBar.style.transition = "width 0.3s ease-in-out";
 
             scoreBarContainer.appendChild(scoreBar);
             document.body.appendChild(scoreBarContainer);
         }
-    }, 1000); // Delay to ensure jsPsych is initialized
+    }
+
+    // Function to update the score bar width dynamically
+    function updateScoreBar() {
+        if (total_trials > 0) {
+            let accuracy = (total_correct / total_trials) * 100; // Convert to percentage
+            document.getElementById("score-bar").style.width = accuracy + "%";
+        }
+    }
+    
+    // Attach function to window object to ensure global access
+    window.updateScoreBar = updateScoreBar;
+    
+
+    // Hook into jsPsych trial logic
+    document.addEventListener("jspsych-run", function () {
+        createScoreBar(); // Ensure score bar exists when the experiment starts
+    });
+
+    // Ensure score bar is created after a short delay if necessary
+    setTimeout(createScoreBar, 1000);
 });
