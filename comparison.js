@@ -251,6 +251,9 @@ var digit_instructions_1 = {
                 console.warn("Element #intro-section not found!");
             }
         }, 10); // Small delay to ensure DOM is ready
+    },
+    on_start: function() {
+        resetScoreBar();  // Reset the score bar at the start of the digit comparison task
     }
 };
 
@@ -493,6 +496,9 @@ var letter_instructions_1 = {
                 console.warn("Element #intro-section not found!");
             }
         }, 10);
+    },
+    on_start: function() {
+        resetScoreBar();  // Reset the score bar at the start of the digit comparison task
     }
 };
 
@@ -536,34 +542,23 @@ var letter_instructions_2 = {
             <p>🔹 Press <span style="color:green"><b>F</b></span> to confirm authenticity.</p>
             <p>🔹 Press <span style="color:red"><b>J</b></span> to reject compromised data.</p> <br>
 
-            <p>Stay sharp. Stay fast. The firewall won't hold forever.</p><br>
+            <p>Stay sharp. Stay fast. The firewall won't hold forever.</p><br><br>
+
+            <p style="color: gray; font-size: 14px;">Press SPACE BAR to continue</p>
+        <br><br>
         </div>
     `,
-    choices: "NO_KEYS",
+    choices: [' '], 
     trial_duration: 6000, // Auto-continue after 6 seconds
-    on_load: function() { 
+    on_load: function() { // Ensure animation is applied after rendering
         setTimeout(() => {
             const transitionElement = document.getElementById("protocol-section");
             if (transitionElement) {
-                transitionElement.style.opacity = "1"; 
+                transitionElement.style.opacity = "1"; // Smooth fade-in
             } else {
                 console.warn("Element #protocol-section not found!");
             }
-        }, 10);
-
-        // Add event listener for space bar to end the block early
-        document.addEventListener("keydown", function handleKeydown(event) {
-            if (event.code === "Space") {
-                jsPsych.finishTrial(); // End the trial when space bar is pressed
-            }
-        });
-
-        // Store reference to function so it can be removed later
-        letter_instructions_2._keydownHandler = handleKeydown;
-    },
-    on_finish: function() {
-        // Remove event listener after trial ends to prevent unintended behavior
-        document.removeEventListener("keydown", letter_instructions_2._keydownHandler);
+        }, 10); // Small delay to ensure DOM is ready
     }
 };
 
@@ -627,14 +622,19 @@ var letter_trial = {
         data.correct_response = correct_response;
         data.timeout = timeout; // Indicate whether the block timed out on that trial
 
+        total_trials ++;
+
         // Play sound effect based on correctness
         if (!data.timeout) {  // Ensure sound is not played when timing out
             if (data.response === correct_response) {
                 playSound('correct'); // Play correct sound
+                total_correct ++;
             } else {
                 playSound('wrong');   // Play wrong sound
             }
         }
+
+        updateScoreBar();
 
         if (block_trial_count == n_trials) {
             // Reset block trial count after all trials are completed
@@ -701,6 +701,9 @@ var pattern_instructions_1 = {
                 console.warn("Element #intro-section not found!");
             }
         }, 10);
+    },
+    on_start: function() {
+        resetScoreBar();  // Reset the score bar at the start of the digit comparison task
     }
 };
 
@@ -754,35 +757,22 @@ var pattern_instructions_2 = {
             <p>🔹 Press <span style="color:green"><b>F</b></span> to confirm authenticity.</p>
             <p>🔹 Press <span style="color:red"><b>J</b></span> to reject compromised data.</p> <br>
 
-            <p>Stay sharp. Stay fast. The firewall won't hold forever.</p><br>
+            <p>Stay sharp. Stay fast. The firewall won't hold forever.</p><br><br>
+
+            <p style="color: gray; font-size: 14px;">Press SPACE BAR to continue</p>
         </div>
     `,
-    choices: "NO_KEYS",
+    choices: [' '], 
     trial_duration: 4000, // Auto-continue after 4 seconds
-    on_load: function() { 
+    on_load: function() { // Ensure animation is applied after rendering
         setTimeout(() => {
             const transitionElement = document.getElementById("protocol-section");
             if (transitionElement) {
-                transitionElement.style.opacity = "1"; 
+                transitionElement.style.opacity = "1"; // Smooth fade-in
             } else {
                 console.warn("Element #protocol-section not found!");
             }
-        }, 10);
-
-        // Add event listener for space bar to end the block early
-        document.addEventListener("keydown", function(event) {
-            if (event.code === "Space") {
-                jsPsych.finishTrial(); // End the trial when space bar is pressed
-            }
-        });
-    },
-    on_finish: function() {
-        // Remove event listener after trial ends to prevent unintended behavior
-        document.removeEventListener("keydown", function(event) {
-            if (event.code === "Space") {
-                jsPsych.finishTrial();
-            }
-        });
+        }, 10); // Small delay to ensure DOM is ready
     }
 };
 
@@ -820,9 +810,8 @@ var pattern_trial = {
     type: jsPsychCanvasKeyboardResponse,
     stimulus: drawPatterns,
     canvas_size: [screen_height, screen_width],
-    choices: ['f', 'j'],
+    choices: ['f', 'j'], // ONLY allow 'f' and 'j' as valid responses
     on_start: function() {
-        // Sample one more than the set size. Extra is used when patterns are different
         startposindex = jsPsych.timelineVariable('posindex');
         var diff = jsPsych.timelineVariable('diff');
         condition = diff == 1 ? "diff" : "same";
@@ -846,11 +835,16 @@ var pattern_trial = {
         data.correct_response = correct_response;
         data.timeout = timeout; 
 
-        if (String(data.response).trim().toLowerCase() === String(correct_response).trim().toLowerCase()) {
+        total_trials++;
+
+        if (data.response === correct_response) {
             playSound('correct');
+            total_correct++;
         } else {
             playSound('wrong');
         }
+
+        updateScoreBar();
 
         if (block_trial_count == n_trials) {
             block_trial_count = 0;
@@ -858,6 +852,8 @@ var pattern_trial = {
         }
     }
 };
+
+
 
 var pattern_block_3_1 = createBlock(3, pattern_list_3_1, "pattern");
 var pattern_block_3_2 = createBlock(3, pattern_list_3_2, "pattern");
@@ -903,21 +899,21 @@ var pattern_conclusion = {
 
 var digit_timeline = [
     digit_instructions_1, digit_instructions_2, digit_practice_same, digit_practice_diff, digit_instructions_3,
-    digit_block_3_1, digit_block_6_1, 
+    digit_block_3_1, // digit_block_6_1, 
     // digit_block_9_1, digit_block_3_2, digit_block_6_2, digit_block_9_2,
     digit_conclusion
 ];
 
 var letter_timeline = [
     letter_instructions_1, letter_practice_same, letter_practice_diff, letter_instructions_2,
-    letter_block_3_1, letter_block_6_1, 
+    letter_block_3_1, // letter_block_6_1, 
     // letter_block_9_1, letter_block_3_2, letter_block_6_2, letter_block_9_2,
     letter_conclusion
 ];
 
 var pattern_timeline = [
     pattern_instructions_1, pattern_practice_same, pattern_practice_diff, pattern_instructions_2,
-    pattern_block_3_1, pattern_block_6_1, 
+    pattern_block_3_1, // pattern_block_6_1, 
     // pattern_block_9_1, pattern_block_3_2, pattern_block_6_2, pattern_block_9_2,
     pattern_conclusion
 ];
@@ -926,8 +922,8 @@ var timeline = [
     get_subject_id, // get_location,
     welcome, enter_fullscreen,
     ...digit_timeline,
-    // ...letter_timeline,
-    // ...pattern_timeline,
+    ...letter_timeline,
+    ...pattern_timeline,
     exit_fullscreen
 ];
 

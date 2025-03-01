@@ -19,11 +19,21 @@ document.addEventListener("DOMContentLoaded", function () {
         if (total_trials > 0) {
             let accuracy = (total_correct / total_trials) * 100; // Convert to percentage
             document.getElementById("score-bar").style.width = accuracy + "%";
+        }else {
+            document.getElementById("score-bar").style.width = "0%"; // Reset the bar when no trials have been conducted
         }
+    }
+
+    function resetScoreBar() {
+        total_correct = 0;
+        total_trials = 0;
+        experimentStarted = false;
+        updateScoreBar(); // Ensure the bar resets visually
     }
     
     // Attach function to window object to ensure global access
     window.updateScoreBar = updateScoreBar;
+    window.resetScoreBar = resetScoreBar;
     
 
     // Hook into jsPsych trial logic
