@@ -911,9 +911,9 @@ var pattern_timeline = [
 var timeline = [
     get_subject_id, // get_location,
     welcome, enter_fullscreen,
-    // ...digit_timeline,
+    ...digit_timeline,
     // ...letter_timeline,
-    ...pattern_timeline,
+    // ...pattern_timeline,
     exit_fullscreen
 ];
 
