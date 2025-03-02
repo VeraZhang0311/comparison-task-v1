@@ -23,9 +23,9 @@ var end_timer;
 var timeout = 0; // Numeric container indicating whether block timed out at this trial
 var subject; // String container of subject ID to be used appended to saved files at the end
 var online = 0; // Numeric container indicating whether task is being administered online
-var total_correct = 0;
-var total_trials = 0;
-var experimentStarted = false;
+var total_correct = 0; // scorebar
+var total_trials = 0; // scorebar
+var experimentStarted = false; // scorebar
 
 /////////////////// Sub-task 1: Digit Comparison /////////////////////////////////
 // Hardcode order of conditions to ensure that subjects still get an equal distribution of same and different even if they only get to beginning trials
@@ -170,8 +170,6 @@ function createBlock(setsize, block_var_list, taskName) {
     return block;
 }
 
-
-
 ///////////////////////////////// PART 2: Set-up nodes //////////////////////////////////
 // 		1. enter_fullscreen
 //		2. get_subject_id: Get subject ID
@@ -197,6 +195,9 @@ var get_subject_id = {
         required: true,
         name: "participant_id"
     }],
+    on_start: function() {
+        hideScoreBar(); // Hide score bar during instructions
+    },
     on_finish: function(data) {
         jsPsych.data.addProperties({
             participant_id: data.response.participant_id
@@ -379,12 +380,13 @@ var digit_trial = {
 	stimulus: function() {return createStimulus(jsPsych.timelineVariable('num1'), jsPsych.timelineVariable('num2'))},
 	choices: ['f', 'j'],
     on_start: function(data) {
+        showScoreBar();
         // Sample one more than the set size. Extra is used when patterns are different
         var diff = jsPsych.timelineVariable('diff')
         condition = diff == 1 ? "diff" : "same";
         correct_response = diff == 1 ? "j" : "f";
         
-        block_trial_count++
+        block_trial_count ++;
         if (block_trial_count == 1) {
             end_timer = setTimeout(function() {
 
@@ -426,7 +428,6 @@ var digit_trial = {
         }
 
         updateScoreBar();
-        console.log(`🔍 Total Trials: ${total_trials}, Correct Responses: ${total_correct}`);
 
         if (block_trial_count == n_trials) {
             // reset block trial count after person gets through all the trials
@@ -468,6 +469,7 @@ var digit_conclusion = {
         }, 10);
     },
     on_start: function() {
+        hideScoreBar();
         playSound('success'); // Play success sound on conclusion screen
         if (online == 0) {
             var filename = "data_digit-comparison_" + subject + ".csv";
@@ -599,6 +601,7 @@ var letter_trial = {
     },
     choices: ['f', 'j'],
     on_start: function(data) {
+        showScoreBar();
         correct_response = jsPsych.timelineVariable('cond') == "diff" ? "j" : "f";
         
         block_trial_count++;
@@ -673,6 +676,7 @@ var letter_conclusion = {
         }, 10);
     },
     on_start: function() {
+        hideScoreBar();
         playSound('success');
         if (online == 0) {
             var filename = "data_letter-comparison_" + subject + ".csv";
@@ -776,7 +780,6 @@ var pattern_instructions_2 = {
     }
 };
 
-
 var pattern_block_instructions = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: function() { 
@@ -812,6 +815,8 @@ var pattern_trial = {
     canvas_size: [screen_height, screen_width],
     choices: ['f', 'j'], // ONLY allow 'f' and 'j' as valid responses
     on_start: function() {
+        showScoreBar();
+
         startposindex = jsPsych.timelineVariable('posindex');
         var diff = jsPsych.timelineVariable('diff');
         condition = diff == 1 ? "diff" : "same";
@@ -883,6 +888,7 @@ var pattern_conclusion = {
         }, 10);
     },
 	on_start: function() {
+        hideScoreBar();
         playSound('success'); // Play success sound on conclusion screen
 		if (online == 0) {
 			var filename = "data_pattern-comparison_" + subject + ".csv";
