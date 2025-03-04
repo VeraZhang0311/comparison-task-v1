@@ -26,6 +26,9 @@ var online = 0; // Numeric container indicating whether task is being administer
 var total_correct = 0; // scorebar
 var total_trials = 0; // scorebar
 var experimentStarted = false; // scorebar
+var digit_correct = 0, digit_trials = 0;
+var letter_correct = 0, letter_trials = 0;
+var pattern_correct = 0, pattern_trials = 0;
 
 /////////////////// Sub-task 1: Digit Comparison /////////////////////////////////
 // Hardcode order of conditions to ensure that subjects still get an equal distribution of same and different even if they only get to beginning trials
@@ -242,7 +245,7 @@ var digit_instructions_1 = {
         </div>
     `,
     choices: "NO_KEYS", 
-    trial_duration: 3500,
+    trial_duration: 5000,
     on_load: function() { // Ensure animation is applied after rendering
         setTimeout(() => {
             const transitionElement = document.getElementById("intro-section");
@@ -418,11 +421,13 @@ var digit_trial = {
         data.timeout = timeout; // Indicate whether the block timed out on that trial
 
         total_trials ++;
+        digit_trials++; 
 
         // Play correct or wrong sound
         if (data.accuracy === 1) {
             playSound('correct');
             total_correct ++;
+            digit_correct ++;
         } else {
             playSound('wrong');
         }
@@ -433,7 +438,6 @@ var digit_trial = {
             // reset block trial count after person gets through all the trials
             block_trial_count = 0;
             clearTimeout(end_timer);
-
             // console.log(block_trial_count); // Here to debug
         }
 
@@ -459,7 +463,7 @@ var digit_conclusion = {
         </div>
     `,
     post_trial_gap: 2000,
-    trial_duration: 3000,  // Automatically proceed after 3 seconds
+    trial_duration: 5000,  // Automatically proceed after 5 seconds
     on_load: function() {
         setTimeout(() => {
             const transitionElement = document.getElementById("conclusion-screen");
@@ -488,7 +492,7 @@ var letter_instructions_1 = {
         </div>
     `,
     choices: "NO_KEYS", 
-    trial_duration: 3500,
+    trial_duration: 5000,
     on_load: function() { // Ensure animation is applied after rendering
         setTimeout(() => {
             const transitionElement = document.getElementById("intro-section");
@@ -626,12 +630,14 @@ var letter_trial = {
         data.timeout = timeout; // Indicate whether the block timed out on that trial
 
         total_trials ++;
+        letter_trials ++; 
 
         // Play sound effect based on correctness
         if (!data.timeout) {  // Ensure sound is not played when timing out
             if (data.response === correct_response) {
                 playSound('correct'); // Play correct sound
                 total_correct ++;
+                letter_correct ++;
             } else {
                 playSound('wrong');   // Play wrong sound
             }
@@ -666,7 +672,7 @@ var letter_conclusion = {
         </div>
     `,
     post_trial_gap: 2000,
-    trial_duration: 3000,  // Automatically proceed after 3 seconds
+    trial_duration: 5000,  // Automatically proceed after 5 seconds
     on_load: function() {
         setTimeout(() => {
             const transitionElement = document.getElementById("conclusion-screen");
@@ -695,7 +701,7 @@ var pattern_instructions_1 = {
         </div>
     `,
     choices: "NO_KEYS", 
-    trial_duration: 3500,
+    trial_duration: 5000,
     on_load: function() { // Ensure animation is applied after rendering
         setTimeout(() => {
             const transitionElement = document.getElementById("intro-section");
@@ -841,10 +847,12 @@ var pattern_trial = {
         data.timeout = timeout; 
 
         total_trials++;
+        pattern_trials++; 
 
         if (data.response === correct_response) {
             playSound('correct');
             total_correct++;
+            pattern_correct++;
         } else {
             playSound('wrong');
         }
@@ -870,14 +878,27 @@ var pattern_block_9_2 = createBlock(9, pattern_list_9_2, "pattern");
 // conclusion page
 var pattern_conclusion = {
     type: jsPsychHtmlKeyboardResponse,
-    stimulus: `
-        <div id="conclusion-screen"  class="fade-in">
-            <p><b>ALL MISSION ACCOMPLISHED ✅</b></p>
-            <p>Operative, your decryption skills are unmatched.</p>
-            <p>The system is secure for now!</p><br><br>
-            <p style="color: gray; font-size: 14px;"><b>Press ANY KEY to exit</b></p>
-        </div>
-    `,
+    stimulus: function() {
+        let digit_accuracy = digit_trials > 0 ? Math.round((digit_correct / digit_trials) * 100) : 0;
+        let letter_accuracy = letter_trials > 0 ? Math.round((letter_correct / letter_trials) * 100) : 0;
+        let pattern_accuracy = pattern_trials > 0 ? Math.round((pattern_correct / pattern_trials) * 100) : 0;
+
+        return `
+            <div id="conclusion-screen" class="fade-in">
+                <p><b>ALL MISSION ACCOMPLISHED ✅</b></p>
+                <p>Operative, your decryption skills are unmatched.</p>
+                <p>The system is secure for now!</p><br>
+                
+                <h2>Final Accuracy Report:</h2>
+                <p>📊 Digit Task Accuracy: <b>${digit_accuracy}%</b></p>
+                <p>📊 Letter Task Accuracy: <b>${letter_accuracy}%</b></p>
+                <p>📊 Pattern Task Accuracy: <b>${pattern_accuracy}%</b></p>
+
+                <br><br>
+                <p style="color: gray; font-size: 14px;"><b>Press ANY KEY to exit</b></p>
+            </div>
+        `;
+    },
     post_trial_gap: 2000,
     on_load: function() {
         setTimeout(() => {
